@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Île-de-France – Cœur de la France</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #0055a4, #ffffff, #ef4135, #ffffff);
+      background-size: 400% 400%;
+      animation: backgroundShift 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 220px;
+      min-height: 100vh;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    main {
+      margin-left: 220px;
+      padding: 40px 30px;
+      width: calc(100% - 220px);
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 60px auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      border-bottom: 2px solid #fff;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 1.15em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .back-button {
+      display: block;
+      margin: 60px auto;
+      text-align: center;
+      width: fit-content;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: white;
+      color: #0055a4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-left: 220px;
+      background-color: rgba(0, 0, 0, 0.6);
+      font-size: 0.9em;
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        min-height: auto;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      main, footer {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Île-de-France</h1>
+    <nav>
+      <a href="#histoire">Histoire</a>
+      <a href="#geographie">Géographie</a>
+      <a href="#economie">Économie</a>
+      <a href="#culture">Culture</a>
+      <a href="#transports">Transports</a>
+      <a href="#tourisme">Tourisme</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="histoire" class="section">
+      <h2>Histoire</h2>
+      <p>L'histoire de l'Île-de-France est étroitement liée à celle de la nation française. C'est dans cette région que les rois capétiens établirent leur pouvoir, notamment autour de Paris, qui deviendra le cœur politique, économique et culturel du pays. De la fondation de Lutèce par les Parisii à l'époque romaine, jusqu'aux événements de la Révolution française, la région a été le théâtre de nombreux bouleversements historiques majeurs. Le château de Versailles, ancienne résidence royale, illustre l'apogée du pouvoir monarchique. Durant les deux guerres mondiales, Paris et sa région ont également joué des rôles clés en tant que centre de résistance, d'occupation, et de libération. L'Île-de-France incarne donc l'histoire vivante de la France.</p>
+    </section>
+
+    <section id="geographie" class="section">
+      <h2>Géographie</h2>
+      <p>L'Île-de-France s'étend sur plus de 12 000 km² et comprend huit départements : Paris, Seine-et-Marne, Yvelines, Essonne, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne et Val-d’Oise. C’est une région marquée par la Seine et ses affluents, avec un contraste saisissant entre zones ultra-urbanisées et espaces ruraux. La région offre un éventail de paysages, de forêts domaniales comme celles de Fontainebleau et Rambouillet, aux vastes plaines agricoles en passant par les vallées verdoyantes. Elle joue un rôle central dans la structuration du territoire français grâce à sa situation géographique stratégique au cœur du pays.</p>
+    </section>
+
+    <section id="economie" class="section">
+      <h2>Économie</h2>
+      <p>Première région économique française, l’Île-de-France représente près d’un tiers du PIB national. Elle accueille le plus grand quartier d’affaires d’Europe à La Défense et de nombreuses entreprises multinationales. Le secteur tertiaire y est largement prédominant, avec une forte concentration dans les services financiers, les technologies, la recherche et l’éducation. Par ailleurs, la région est également un centre logistique majeur, bénéficiant de réseaux d'infrastructures exceptionnels. Malgré ces atouts, l’Île-de-France est confrontée à des inégalités territoriales importantes, notamment en matière d’emploi et d’accès au logement.</p>
+    </section>
+
+    <section id="culture" class="section">
+      <h2>Culture</h2>
+      <p>Terre d’inspiration pour les artistes du monde entier, l’Île-de-France est le centre culturel de la France. On y trouve le Louvre, musée le plus visité du monde, ainsi que l’Opéra Garnier, le Centre Pompidou ou encore la Bibliothèque nationale. La région accueille chaque année des festivals prestigieux, des expositions de renommée mondiale et abrite de nombreuses institutions culturelles. Elle est aussi le berceau de nombreux mouvements littéraires, artistiques et architecturaux. C’est un lieu où se mêlent patrimoine historique et création contemporaine.</p>
+    </section>
+
+    <section id="transports" class="section">
+      <h2>Transports</h2>
+      <p>L’Île-de-France dispose d’un réseau de transports parmi les plus denses d’Europe. Avec ses lignes de métro, RER, tramways, bus et trains de banlieue, elle assure quotidiennement des millions de déplacements. Les aéroports internationaux de Roissy-Charles-de-Gaulle et Orly renforcent sa dimension mondiale. Le Grand Paris Express, plus grand projet de transport en Europe, vise à moderniser et fluidifier la mobilité urbaine en reliant les banlieues entre elles sans passer par Paris, tout en réduisant l’empreinte carbone des transports publics.</p>
+    </section>
+
+    <section id="tourisme" class="section">
+      <h2>Tourisme</h2>
+      <p>Région la plus visitée au monde, l’Île-de-France est un véritable écrin touristique. Paris attire des millions de visiteurs grâce à ses monuments emblématiques : Tour Eiffel, Notre-Dame, Champs-Élysées, mais aussi ses quartiers pittoresques comme Montmartre. En dehors de Paris, la région regorge de trésors : châteaux de Versailles, Vaux-le-Vicomte, musées, parcs naturels, et Disneyland Paris. Le tourisme culturel, gastronomique et patrimonial y est extrêmement développé, faisant de l’Île-de-France un joyau à explorer encore et encore.</p>
+    </section>
+
+    <a href="index.html" class="back-button">← Retour à l'accueil</a>
+  </main>
+
+  <footer>
+    &copy; 2025 – Région Île-de-France | Site éducatif développé pour les passionnés.
+  </footer>
+
+</body>
+</html>

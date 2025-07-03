@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portail Île-de-France</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      background: transparent;
+      transition: opacity 0.5s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #0055A4, #FFFFFF, #EF4135);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    button, a {
+      background-color: rgba(255,255,255,0.15);
+      color: white;
+      border: 2px solid white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    button:hover, a:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="backgroundCanvas"></canvas>
+
+<!-- Écran d'accueil -->
+<div id="welcome" class="screen">
+  <h1>Bienvenue sur le portail</h1>
+  <p>Découvrez l'Île-de-France à travers ses projets, son histoire et ses innovations.</p>
+  <button onclick="showPortal()">Entrer dans le portail</button>
+</div>
+
+<!-- Écran des liens -->
+<div id="portal" class="screen hidden">
+  
+  <div class="links">
+    <a href="formulaire-region.html">Formulaire de contact</a>
+    <a href="projet1.html">Le Siège de la Région</a>
+    <a href="projet2.html">Découvrir l’Île-de-France</a>
+    <a href="projet3.html">Histoire de l’Île-de-France</a>
+    <a href="startups.html">Startups & Innovation</a>
+    <a href="histoire-paris.html">Paris</a>
+   <a href="projet4.html">A venir !</a>
+
+    
+    
+  </div>
+  <button onclick="goBack()">⬅ Retour</button>
+</div>
+
+<script>
+  // Animation du fond avec les couleurs bleu, blanc, rouge
+  const canvas = document.getElementById('backgroundCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, t = 0;
+
+  function resizeCanvas() {
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.width = w;
+    canvas.height = h;
+  }
+
+  function animateBackground() {
+    t += 0.02;
+    ctx.clearRect(0, 0, w, h);
+
+    const gradient = ctx.createRadialGradient(
+      w / 2 + Math.sin(t) * 200,
+      h / 2 + Math.cos(t) * 200,
+      100,
+      w / 2,
+      h / 2,
+      Math.max(w, h)
+    );
+
+    gradient.addColorStop(0, 'rgba(0,85,164,0.4)');   // Bleu
+    gradient.addColorStop(0.5, 'rgba(255,255,255,0.3)'); // Blanc
+    gradient.addColorStop(1, 'rgba(239,65,53,0.4)');  // Rouge
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, w, h);
+
+    requestAnimationFrame(animateBackground);
+  }
+
+  function showPortal() {
+    document.getElementById('welcome').classList.add('hidden');
+    document.getElementById('portal').classList.remove('hidden');
+  }
+
+  function goBack() {
+    document.getElementById('portal').classList.add('hidden');
+    document.getElementById('welcome').classList.remove('hidden');
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  animateBackground();
+</script>
+
+</body>
+</html>

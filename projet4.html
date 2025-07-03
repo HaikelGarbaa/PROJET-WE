@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A venir</title>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #0055a4, #ffffff, #ef4135, #ffffff);
+      background-size: 400% 400%;
+      animation: backgroundShift 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 220px;
+      min-height: 100vh;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    main {
+      margin-left: 220px;
+      padding: 40px 30px;
+      width: calc(100% - 220px);
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 60px auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      border-bottom: 2px solid #fff;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 1.15em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .back-button {
+      display: block;
+      margin: 60px auto;
+      text-align: center;
+      width: fit-content;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: white;
+      color: #0055a4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-left: 220px;
+      background-color: rgba(0, 0, 0, 0.6);
+      font-size: 0.9em;
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        min-height: auto;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      main, footer {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  </style>
+
+    
+</head>
+<body>
+<header>
+    <h1>A venir</h1>
+<nav>
+<a href=""
+
+</nav>
+</header>
+
+
+</body>
+</html>

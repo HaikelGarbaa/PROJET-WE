@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Région Île-de-France</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #ef4135, #ffffff, #0055a4, #ffffff);
+      background-size: 400% 400%;
+      animation: tricolorMove 15s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes tricolorMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: white;
+      color: #0055a4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 0.9em;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Découvrir la Région Île-de-France</h1>
+  </header>
+
+  <div class="content">
+    <section>
+      <h2>Présentation générale</h2>
+      <p>L’Île-de-France est la région la plus peuplée et la plus dynamique de France. Elle englobe Paris, la capitale du pays, et ses huit départements environnants.</p>
+    </section>
+
+    <section>
+      <h2>Histoire</h2>
+      <p>Berceau historique du pouvoir royal français, la région a toujours été un centre politique, culturel et économique majeur. Elle a vu naître des monuments emblématiques comme le château de Versailles, Notre-Dame ou le Louvre.</p>
+    </section>
+
+    <section>
+      <h2>Économie</h2>
+      <p>Première région économique d’Europe, elle concentre des secteurs clés comme les services, la finance, la tech et les industries culturelles. Elle représente près d’un tiers du PIB français.</p>
+    </section>
+
+    <section>
+      <h2>Culture et patrimoine</h2>
+      <p>Musées, théâtres, cinémas, festivals… L’Île-de-France offre une richesse culturelle inégalée, accessible à tous les habitants comme aux visiteurs du monde entier.</p>
+    </section>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">← Retour à l'accueil</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 - Région Île-de-France | Site éducatif
+  </footer>
+
+</body>
+</html>

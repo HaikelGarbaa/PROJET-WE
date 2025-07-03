@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Formulaire Tricolore</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .form-container {
+      position: relative;
+      max-width: 500px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      background: linear-gradient(90deg, #ed2939, #fff, #002395);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background-color: #002395;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #001970;
+    }
+
+    .return-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 25px;
+      background-color: #ed2939;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 2;
+    }
+
+    .return-button:hover {
+      background-color: #c0212d;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="backgroundCanvas"></canvas>
+
+<div class="form-container">
+  <h2>Contactez-nous</h2>
+  <form action="save.php" method="POST">
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
+<button class="return-button" onclick="window.location.href='index.html'">⬅ Retour</button>
+
+<script>
+  const canvas = document.getElementById("backgroundCanvas");
+  const ctx = canvas.getContext("2d");
+
+  let width, height, time = 0;
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  function draw() {
+    time += 0.01;
+    const gradient = ctx.createLinearGradient(
+      width * 0.3 * Math.sin(time),
+      height * 0.3 * Math.cos(time),
+      width * Math.cos(time),
+      height * Math.sin(time)
+    );
+    gradient.addColorStop(0, "rgba(237, 41, 57, 0.5)");
+    gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.2)");
+    gradient.addColorStop(1, "rgba(0, 35, 149, 0.5)");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+</body>
+</html>
